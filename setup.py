@@ -10,7 +10,7 @@ if sys.version_info.major < 3:
 
 
 setup(name="keras_segmentation",
-      version="0.3.0",
+      version="0.3.1",
       description="Image Segmentation toolkit for keras",
       author="Divam Gupta",
       author_email='divamgupta@gmail.com',
