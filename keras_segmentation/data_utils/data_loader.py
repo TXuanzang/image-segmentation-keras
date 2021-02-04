@@ -38,7 +38,7 @@ def get_pairs_from_paths(images_path, segs_path, ignore_non_matching=False, othe
         the segmentation images from the segs_path directory
         while checking integrity of data """
 
-    ACCEPTABLE_IMAGE_FORMATS = [".jpg", ".jpeg", ".png", ".bmp"]
+    ACCEPTABLE_IMAGE_FORMATS = [".jpg", ".jpeg", ".png", ".bmp", ".tif"]
     ACCEPTABLE_SEGMENTATION_FORMATS = [".png", ".bmp"]
 
     image_files = []
@@ -200,8 +200,8 @@ def verify_segmentation_dataset(images_path, segs_path,
         for im_fn, seg_fn in tqdm(img_seg_pairs):
             img = cv2.imread(im_fn)
             seg = cv2.imread(seg_fn)
-            # Check dimensions match
-            if not img.shape == seg.shape:
+            # Check sizes match
+            if not img.shape[:-1] == seg.shape[:-1]:
                 return_value = False
                 print("The size of image {0} and its segmentation {1} "
                       "doesn't match (possibly the files are corrupt)."
