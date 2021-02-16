@@ -27,7 +27,7 @@ setup(name="keras_segmentation",
             "Keras"+keras_ver,
             "imageio==2.5.0",
             "imgaug>=0.4.0",
-            "opencv-python"+cv_ver,
+            "opencv-python",
             "tqdm"],
       extras_require={
             # These requires provide different backends available with Keras

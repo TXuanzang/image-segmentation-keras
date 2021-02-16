@@ -66,7 +66,7 @@ def unet_mini(n_classes, input_height=360, input_width=480, channels=3):
     return model
 
 
-def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
+def _unet(n_classes, encoder, l1_skip_conn=False, input_height=416,
           input_width=608, channels=3):
 
     img_input, levels = encoder(
