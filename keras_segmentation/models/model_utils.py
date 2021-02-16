@@ -71,6 +71,7 @@ def get_segmentation_model(input, output):
 
     o_shape = Model(img_input, o).output_shape
     i_shape = Model(img_input, o).input_shape
+    print(o_shape, i_shape)
 
     if IMAGE_ORDERING == 'channels_first':
         output_height = o_shape[2]

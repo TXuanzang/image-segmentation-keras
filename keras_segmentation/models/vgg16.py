@@ -24,6 +24,7 @@ def get_vgg_encoder(input_height=224,  input_width=224, pretrained='imagenet', c
     elif IMAGE_ORDERING == 'channels_last':
         img_input = Input(shape=(input_height, input_width, channels))
 
+    # Block 1
     x = Conv2D(64, (3, 3), activation='relu', padding='same',
                name='block1_conv1', data_format=IMAGE_ORDERING)(img_input)
     x = Conv2D(64, (3, 3), activation='relu', padding='same',
