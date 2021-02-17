@@ -99,7 +99,8 @@ def _unet(n_classes, encoder, l1_skip_conn=True, input_height=416,
     o = (ZeroPadding2D((1, 1), data_format=IMAGE_ORDERING))(o)
     o = (Conv2D(64, (3, 3), padding='valid', activation='relu', data_format=IMAGE_ORDERING))(o)
     o = (BatchNormalization())(o)
-
+    
+    # Upsample again!
     o = (UpSampling2D((2, 2), data_format=IMAGE_ORDERING))(o)
     o = (Conv2D(64, (3, 3), padding='same', activation='relu', data_format=IMAGE_ORDERING))(o)
     o = (BatchNormalization())(o)
